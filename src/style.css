@@ -1,1 +1,31 @@
 /* styles go here */
+.html {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
+.body {
+  padding: 0;
+  margin: 0;
+}
+
+.formField {
+  margin: 8px 0;
+  padding: 0;
+  /* background-color: blue; */
+}
+
+.fieldsetOfForm {
+  margin: 20px;
+  padding: 0 10px;
+}
+
+.subFormTitle {
+  margin-left: 5px;
+}
+
+.submit {
+  margin-top: 20px;
+  margin-left: 2px;
+}
