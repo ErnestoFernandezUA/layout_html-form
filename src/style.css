@@ -2,7 +2,7 @@
 .html {
   padding: 0;
   margin: 0;
-  font-size: 17px;
+  /* font-size: 17px; */
 }
 
 .body {
@@ -13,16 +13,17 @@
 .formField {
   margin: 8px 0;
   padding: 0;
-  background-color: blue;
+  /* background-color: blue; */
 }
 
 .fieldsetOfForm {
+  font-size: 18px;
   margin: 20px;
   padding: 0 10px;
 }
 
 .subFormTitle {
-  margin-left: 5px;
+  margin-left: 2px;
 }
 
 .submit {
