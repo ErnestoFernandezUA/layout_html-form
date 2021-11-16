@@ -4,207 +4,245 @@
     <meta charset="UTF-8">
     <meta
       name="viewport"
-      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+      content="width=device-width,
+              user-scalable=no,
+              initial-scale=1.0,
+              maximum-scale=1.0,
+              minimum-scale=1.0"
     >
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTML Form</title>
     <link rel="stylesheet" href="./style.css">
   </head>
+
   <body>
-    <h1>HTML Form1</h1>
-    <form action="https://mate-academy-form-lesson.herokuapp.com/create-application" method="post">
-      <!--------------------------------- -->
-      <fieldset class="fieldsetOfForm">
-        <legend class="subFormTitle">
-          Personal information
-        </legend>
-        <div class="formField">
-          <label for="surname">
-            Surname:
-          </label>
-          <input
-            type="text"
-            id="surname">
-        </div>
+    <!-- <h1>HTML Form1</h1> -->
 
-        <div class="formField">
-          <label for="name">
-            Name:
-          </label>
-          <input
-            type="text"
-            id="name"
-          >
-        </div>
-
-        <div class="formField">
-          <label for="age">
-            How old are you?
-          </label>
-          <input
-            type="number"
-            id="age"
-            min="12"
-            max="100"
-            value="12"
-
-          >
-        </div>
-
-        <div class="formField">
-          <label for="bitrh">
-            Full date of birth
-          </label>
-          <input
-            type="date"
-            id="bitrh"
-          >
-        </div>
-
-        <div class="formField">
-          <label for="term">
-            I accept the term of the agreement
-          </label>
-          <input
-            type="checkbox"
-            id="term">
-        </div>
-      </fieldset>
-      <!--------------------------------- -->
-      <fieldset class="fieldsetOfForm">
-        <legend class="subFormTitle">
-          Registration
-        </legend>
-
-        <div class="formField">
-          <label for="email">
-            E-mail:
-          </label>
-          <input
-            id="email"
-            type="email"
-            placeholder="email@example.com"
-          >
-        </div>
-        <div class="formField">
-          <label for="password">
-            Password:
-          </label>
-          <input
-            id="password"
-            type="password"
-          >
-        </div>
-      </fieldset>
-      <!--------------------------------- -->
-      <fieldset class="fieldsetOfForm">
-        <legend class="subFormTitle">
-          An interesting fact about you!
-        </legend>
-        <div class="formField">
-          <label for="loveCatYes">
-            Do you love cats?
+    <form
+      action="https://mate-academy-form-lesson.herokuapp.com/create-application"
+      method="post"
+      class="form"
+      autocomplete="off"
+      onsubmit="onSubmit()"
+    >
+      <!-- WORKING AREA -->
+      <!-- Personal information---------------- -->
+      <div class="subFormDiv">
+        <fieldset class="fieldsetOfForm">
+          <legend class="subFormTitle">
+            Personal information
+          </legend>
+          <div class="formField">
+            <label for="surname">
+              Surname:
+            </label>
             <input
-              id="loveCatYes"
-              type="radio"
-              name="lovecat"
-              value="Y"
-            > Yes
-          </label>
-
-          <label for="loveCatNo">
-            <input
-              id="loveCatNo"
-              type="radio"
-              name="loveCat"
-              value="N"
-            > No
-          </label>
-        </div>
-
-        <div class="formField">
-          <label for="favColor">
-            What is your favorite color?
-          </label>
-          <input
-            id="favColor"
-            type="color"
-            value="#000000"
-          >
-        </div>
-
-        <div class="formField">
-          <label for="timeToBed">
-            What time do you go to bed"
-          </label>
-          <input
-            id="timeToBed"
-            type="time">
-        </div>
-
-        <div class="formField">
-          <label for="favBrandCars">
-            What are your favorite brand of cars?
-            <select
-              name="favBrandCars"
-              id="favBrandCars"
+              type="text"
+              id="surname"
             >
-              <option
-                value=""
-                selected
-                disabled
+          </div>
+
+          <div class="formField">
+            <label for="name">
+              Name:
+            </label>
+            <input
+              type="text"
+              id="name"
+            >
+          </div>
+
+          <div class="formField">
+            <label for="age">
+              How old are You?
+            </label>
+            <input
+              type="number"
+              id="age"
+              min="12"
+              max="100"
+              value="12"
+            >
+          </div>
+
+          <div class="formField">
+            <label
+              class="fullDateOfBirth"
+              for="birth"
+            >
+              <div id="labelFullDate">
+                  Full date of birth:
+              </div>
+            </label>
+
+            <div class="fullDateOfBirth">
+              <div id="inputFullDate">
+                <input
+                  type="date"
+                  id="birth"
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="formField">
+            <label for="term">
+              I accept the term of the agreement
+            </label>
+            <input
+              type="checkbox"
+              id="term"
+            >
+          </div>
+        </fieldset>
+      </div>
+      <!-- Registration------------------------ -->
+      <div class="subFormDiv">
+        <fieldset class="fieldsetOfForm">
+          <legend class="subFormTitle">
+            Registration
+          </legend>
+
+          <div
+            class="formField"
+            id="registration"
+          >
+            <label for="email">
+              E-mail:
+            </label>
+            <input
+              id="email"
+              type="email"
+              placeholder="email@example.com"
+              required
+            >
+          </div>
+          <div class="formField">
+            <label for="password">
+              Password:
+            </label>
+            <input
+              id="password"
+              type="password"
+              minlength="4"
+              maxlength="8"
+            >
+          </div>
+        </fieldset>
+      </div>
+      <!-- An interesting fact about you!------ -->
+      <div class="subFormDiv">
+        <fieldset class="fieldsetOfForm">
+          <legend class="subFormTitle">
+            An interesting fact about you!
+          </legend>
+
+          <div class="formField">
+            <label for="loveCatYes">
+              Do you love cats?
+              <input
+                id="loveCatYes"
+                type="radio"
+                name="loveCat"
+                value="yes"
+              > Yes
+            </label>
+
+            <label for="loveCatNo">
+              <input
+                id="loveCatNo"
+                type="radio"
+                name="loveCat"
+                value="no"
+              > No
+            </label>
+          </div>
+
+          <div class="formField" id="favColorField">
+            <label for="favColor">
+              What is your favorite color?
+            </label>
+            <input
+              id="favColor"
+              type="color"
+              value="#000000"
+            >
+          </div>
+
+          <div class="formField" id="timeToBedField">
+            <label for="timeToBed">
+              What time do you go to bed?
+            </label>
+            <input
+              id="timeToBed"
+              type="time"
+            >
+          </div>
+
+          <div class="formField">
+            <label for="favBrandCars">
+              What are your favorite brand of cars?
+              <select
+                name="favBrandCars"
+                id="favBrandCars"
+                size="4"
+                multiple
               >
-              </option>
-              <option value="BMW">BMW</option>
-              <option value="Audi">Audi</option>
-              <option value="Lada">Lada</option>
-            </select>
-          </label>
-        </div>
+                <option value="BMW">BMW</option>
+                <option value="Audi">Audi</option>
+                <option value="Lada">Lada</option>
+              </select>
+            </label>
+          </div>
 
-        <div class="formField">
-          <label for="rateWork">
-            How do you rate our work?
-          </label>
-          <input
-            id="rateWork"
-            type="range"
-            name="rateWork"
-            value="0"
-          >
-        </div>
-      </fieldset>
-      <!--------------------------------- -->
-      <fieldset class="fieldsetOfForm">
-        <legend class="subFormTitle">
-          Additional info:
-        </legend>
-
-        <div class="formField">
-          <label for="comments">
-            Comments:
-            <textarea
-              name="comments" id="comments"
-              cols="20"
-              rows="2"
+          <div class="formField">
+            <label for="rateWork">
+              How do you rate our work?
+            </label>
+            <input
+              id="rateWork"
+              type="range"
+              name="rateWork"
+              value="0"
             >
-            </textarea>
-          </label>
-        </div>
+          </div>
+        </fieldset>
+      </div>
+      <!-- Additional info:-------------------- -->
+      <div class="subFormDiv">
+        <fieldset class="fieldsetOfForm">
+          <legend class="subFormTitle">
+            Additional info:
+          </legend>
 
-        <div class="formField">
-          <label for="recommendUs">
-            Would you recommend us?
-            <select name="recommendUs" id="recommendUs">
-              <option value="Yes" selected>yes</option>
-              <option value="No">no</option>
-            </select>
-          </label>
-        </div>
-      </fieldset>
+          <div class="formField" id="commentsField">
+            <label for="comments">
+              Comments:
+              <textarea
+                name="comments" id="comments"
+                cols="20"
+                rows="2"
+              >
+              </textarea>
+            </label>
+          </div>
+
+          <div class="formField">
+            <label for="recommendUs">
+              Would you recommend us?
+              <select name="recommendUs" id="recommendUs">
+                <option value="Yes" selected>yes</option>
+                <option value="No">no</option>
+              </select>
+            </label>
+          </div>
+        </fieldset>
+      </div>
+      <!-- Submit------------------------------ -->
+      <button type="submit" class="submit">Submit</button>
+      <script type="text/javascript" src="./main.js"></script>
+      <!-- end--------------------------------- -->
+      <!-- END OF WORKING AREA -->
     </form>
-
-    <button type="submit" class="submit">Submit</button>
-    <script type="text/javascript" src="./main.js"></script>
   </body>
 </html>
